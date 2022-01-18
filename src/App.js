@@ -57,7 +57,7 @@ function App () {
       (p) => p.pokemon.name).map(p => p.pokemon)
     setCount(uniqueFilteredPokemons.length)
     setLoading(false)
-    setPokemons(uniqueFilteredPokemons.slice((page - 1) * limit, page * limit + limit))
+    setPokemons(uniqueFilteredPokemons.slice((page - 1) * limit, (page - 1) * limit + limit))
   }
 
   function handleFilterTextChange (searchValue) {
