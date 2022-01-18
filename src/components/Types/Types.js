@@ -23,7 +23,8 @@ export default function Types (props) {
   if (loading) return 'Loading...'
 
   return (
-    <div className='TypesSet'>
+    <div className='resetWrapper'>
+    <div className='typesSet'>
       { !loading && types.length
         ? types.map(type =>
           <button
@@ -34,7 +35,9 @@ export default function Types (props) {
           </button>)
         : null
       }
-      <button onClick={() => setSelectedTypes({})}> Reset </button>
+      
+    </div>
+    <button className='resetButton' onClick={() => setSelectedTypes({})}> Reset </button>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import axios from 'axios'
 import SearchBar from './components/SearchBar/SearchBar'
 import Types from './components/Types/Types'
 import { Pagination } from 'antd'
+import LoadingBall from './LoadingBall.js'
 import _ from 'lodash'
 import './App.css'
 
@@ -63,7 +64,7 @@ function App () {
     setSearchValue(searchValue)
   }
 
-  if (loading) return 'loading...'
+  if (loading) return <LoadingBall />
 
   return (
     <div className='App'>
@@ -79,6 +80,18 @@ function App () {
           />
         </div>
       </header>
+      <Pagination className='Pagination'
+        current={page}
+        pageSize={limit}
+        pageSizeOptions={[10, 20, 50]}
+        showSizeChanger={true}
+        onChange={(page, limit) => {
+          setPage(page)
+          setLimit(limit)
+        }}
+        total={count}
+        responsive={true}
+      />
       { !loading && pokemons.length
         ? (<CardBoard className='CardBoard' pokemons={pokemons} filterText={searchValue}/>)
         : null
