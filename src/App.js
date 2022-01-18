@@ -21,7 +21,7 @@ function App () {
 
   useEffect(() => {
     setLoading(true)
-    if (checkTypes()) {
+    if (checkTypes() === true) {
       filterByTypes(page, limit)
     } else {
       axios.get(baseUrl + `?offset=${(page - 1) * limit}&limit=${limit}`
@@ -57,8 +57,7 @@ function App () {
       (p) => p.pokemon.name).map(p => p.pokemon)
     setCount(uniqueFilteredPokemons.length)
     setLoading(false)
-    setPage(1)
-    setPokemons(uniqueFilteredPokemons.slice(page * limit, page * limit + limit))
+    setPokemons(uniqueFilteredPokemons.slice((page - 1) * limit, page * limit + limit))
   }
 
   function handleFilterTextChange (searchValue) {

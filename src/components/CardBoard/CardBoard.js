@@ -15,7 +15,7 @@ export default function CardBoard (props) {
 
   return (
     <div className='CardBoard'>
-    <Row classname='row' gutter={[10, 10]} justify='start' wrap={true}>
+    <Row className='row' gutter={[10, 10]} justify='start' wrap={true}>
       {filterPokemons.map(p => 
         <Col
           key={p.name}
