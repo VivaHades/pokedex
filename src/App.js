@@ -35,7 +35,7 @@ function App () {
 
   function checkTypes () {
     for (const i in selectedTypes) {
-      if (i) return true
+      if (selectedTypes[i]) return true
     }
     return false
   }
@@ -57,6 +57,7 @@ function App () {
       (p) => p.pokemon.name).map(p => p.pokemon)
     setCount(uniqueFilteredPokemons.length)
     setLoading(false)
+    setPage(1)
     setPokemons(uniqueFilteredPokemons.slice(page * limit, page * limit + limit))
   }
 
@@ -80,7 +81,8 @@ function App () {
           />
         </div>
       </header>
-      <Pagination className='Pagination'
+      <Pagination
+        className='Pagination'
         current={page}
         pageSize={limit}
         pageSizeOptions={[10, 20, 50]}
@@ -96,7 +98,8 @@ function App () {
         ? (<CardBoard className='CardBoard' pokemons={pokemons} filterText={searchValue}/>)
         : null
       }
-      <Pagination className='Pagination'
+      <Pagination
+        className='Pagination'
         current={page}
         pageSize={limit}
         pageSizeOptions={[10, 20, 50]}

@@ -22,10 +22,10 @@ export default function PokemonCard (props) {
       <div className='Image'>
         <img src={pokemon.sprites.front_default} alt="" />
       </div>
-      <div>
+      <div className='baseInfo'>
         <b>Types:</b><br />
           {pokemon.types && pokemon.types.map(t =>
-            <button className={t.type.name} key={t.type.name}>
+            <button className={t.type.name} key={t.type.url}>
               {t.type.name}
             </button>)}
             <br />
@@ -67,7 +67,7 @@ export default function PokemonCard (props) {
 
   return (
     <Card
-      style={{ width: '96%', margin: 'auto' }}
+      style={{ margin: 'auto'}}
       title={pokemon.name}
       tabList={tabList}
       activeTabKey={activeTabKey}

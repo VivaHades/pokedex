@@ -14,18 +14,20 @@ export default function CardBoard (props) {
   )
 
   return (
-    <Row gutter={[10, 10]} className='CardBoard' wrap={true}>
-      {filterPokemons.map(p => <Col
-                                span={6}
-                                key={p.name}
-                                xs={24}
-                                sm={12}
-                                md={8}
-                                lg={6}
-                                >
-                                <PokemonCard pokemon={p} />
-                               </Col>)
+    <div className='CardBoard'>
+    <Row classname='row' gutter={[10, 10]} justify='start' wrap={true}>
+      {filterPokemons.map(p => 
+        <Col
+          key={p.name}
+          xs={24}
+          sm={12}
+          md={8}
+          lg={6}
+          >
+          <PokemonCard pokemon={p} />
+        </Col>)
       }
     </Row>
+    </div>
   )
 }
