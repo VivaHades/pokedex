@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.636c87b4.css",
-    "main.js": "/static/js/main.2e60e960.js",
+    "main.css": "/static/css/main.4fd1c442.css",
+    "main.js": "/static/js/main.5794a111.js",
+    "static/media/pokeball.png": "/static/media/pokeball.9db271adf4800a5dd54d.png",
     "index.html": "/index.html",
-    "main.636c87b4.css.map": "/static/css/main.636c87b4.css.map",
-    "main.2e60e960.js.map": "/static/js/main.2e60e960.js.map"
+    "main.4fd1c442.css.map": "/static/css/main.4fd1c442.css.map",
+    "main.5794a111.js.map": "/static/js/main.5794a111.js.map"
   },
   "entrypoints": [
-    "static/css/main.636c87b4.css",
-    "static/js/main.2e60e960.js"
+    "static/css/main.4fd1c442.css",
+    "static/js/main.5794a111.js"
   ]
 }
