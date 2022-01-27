@@ -23,29 +23,28 @@ export default function PokemonCard (props) {
         <img src={pokemon.sprites.front_default} alt="" />
       </div>
       <div className='baseInfo'>
-        <b>Types:</b><br />
+        <b>Types:</b> <br />
           {pokemon.types && pokemon.types.map(t =>
             <button className={t.type.name} key={t.type.url}>
               {t.type.name}
             </button>)}
-            <br />
+        <br />
         <b>Abilities</b> <br />
           {pokemon.abilities && pokemon.abilities.map(ability => 
             <i key={ability.ability.name}> {ability.ability.name} <br /></i>
           )}
       </div>
-  
     </div>
     ),
     Info:
     <div className='container'>
       <div className='baseChars'>
-      <h2>Base characteristics</h2>
+      <h3>Base characteristics</h3>
         height: {pokemon.height}<br/>
         weight: {pokemon.weight}<br/>
       </div>
       <div className='Stats'>
-      <h2>Stats</h2>
+      <h3>Stats</h3>
         {pokemon.stats && pokemon.stats.map(stat =>
           <p key={stat.stat.name} style={{ margin: '0px' }}>
             <b>{stat.stat.name}</b>: { stat.base_stat}

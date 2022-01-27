@@ -6,7 +6,6 @@ export default function Types (props) {
   const { selectedTypes, setSelectedTypes } = props
   const [types, setTypes] = useState([])
   const [loading, setLoading] = useState(true)
-
   useEffect(() => {
     setLoading(true)
     axios.get('https://pokeapi.co/api/v2/type').then(res => {
@@ -28,13 +27,16 @@ export default function Types (props) {
       { !loading && types.length
         ? types.map(type =>
           <button
-            className={type.name}
+            className={selectedTypes[type.name] ? 'active' : type.name}
             key={type.name}
             onClick={() => selectType(type.name)}>
             {type.name}
+            {//console.log(selectedTypes[type.name])
+            }
           </button>)
         : null
       }
+      
       
     </div>
     <button className='resetButton' onClick={() => setSelectedTypes({})}> Reset </button>
